@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS Projeto05
+DEFAULT CHARACTER SET utf8mb4
+DEFAULT COLLATE utf8mb4_unicode_ci;
+
+USE Projeto05;
+
+CREATE TABLE IF NOT EXISTS cadastro (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    usuario VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+) DEFAULT CHARSET = utf8mb4
+  DEFAULT COLLATE = utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS tarefas (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(5000) NOT NULL,
+    prazo date NOT NULL,
+    horario time NOT NULL,
+    id_cadastro INT NOT NULL,
+    FOREIGN KEY (id_cadastro) REFERENCES cadastro(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+) DEFAULT CHARSET = utf8mb4
+  DEFAULT COLLATE = utf8mb4_unicode_ci;
+
+ALTER TABLE tarefas RENAME COLUMN id TO id_tarefa;
