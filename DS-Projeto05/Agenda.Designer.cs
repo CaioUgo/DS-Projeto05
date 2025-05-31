@@ -35,23 +35,26 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             panel1 = new Panel();
             guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             Minimizar = new Guna.UI2.WinForms.Guna2ImageButton();
             Fechar = new Guna.UI2.WinForms.Guna2ImageButton();
-            ListaCompromisso = new Guna.UI2.WinForms.Guna2DataGridView();
             groupBox1 = new GroupBox();
-            btnAdicionar = new Guna.UI2.WinForms.Guna2ImageButton();
-            chkFeito = new DataGridViewCheckBoxColumn();
-            colTarefa = new DataGridViewTextBoxColumn();
-            colData = new DataGridViewTextBoxColumn();
-            colHorario = new DataGridViewTextBoxColumn();
-            colRemover = new DataGridViewButtonColumn();
+            txtHorario = new MaskedTextBox();
+            txtData = new MaskedTextBox();
+            ListaCompromisso = new Guna.UI2.WinForms.Guna2DataGridView();
+            btnExcluir = new Button();
+            btnEditar = new Button();
+            Adicionar = new Button();
+            Prazo = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            txtDescricao = new TextBox();
+            txtID = new TextBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ListaCompromisso).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ListaCompromisso).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -127,37 +130,72 @@
             Fechar.TabIndex = 1;
             Fechar.Click += Fechar_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.WhiteSmoke;
+            groupBox1.Controls.Add(txtHorario);
+            groupBox1.Controls.Add(txtData);
+            groupBox1.Controls.Add(ListaCompromisso);
+            groupBox1.Controls.Add(btnExcluir);
+            groupBox1.Controls.Add(btnEditar);
+            groupBox1.Controls.Add(Adicionar);
+            groupBox1.Controls.Add(Prazo);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txtDescricao);
+            groupBox1.Controls.Add(txtID);
+            groupBox1.Location = new Point(12, 55);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(983, 532);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            // 
+            // txtHorario
+            // 
+            txtHorario.Location = new Point(722, 183);
+            txtHorario.Mask = "00:00";
+            txtHorario.Name = "txtHorario";
+            txtHorario.Size = new Size(241, 23);
+            txtHorario.TabIndex = 15;
+            // 
+            // txtData
+            // 
+            txtData.Location = new Point(722, 124);
+            txtData.Mask = "00/00/0000";
+            txtData.Name = "txtData";
+            txtData.Size = new Size(241, 23);
+            txtData.TabIndex = 14;
+            // 
             // ListaCompromisso
             // 
             ListaCompromisso.AllowUserToAddRows = false;
-            ListaCompromisso.AllowUserToResizeRows = false;
+            ListaCompromisso.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             ListaCompromisso.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             ListaCompromisso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            ListaCompromisso.ColumnHeadersHeight = 40;
+            ListaCompromisso.ColumnHeadersHeight = 17;
             ListaCompromisso.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            ListaCompromisso.Columns.AddRange(new DataGridViewColumn[] { chkFeito, colTarefa, colData, colHorario, colRemover });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             ListaCompromisso.DefaultCellStyle = dataGridViewCellStyle3;
             ListaCompromisso.GridColor = Color.FromArgb(231, 229, 255);
-            ListaCompromisso.Location = new Point(15, 30);
+            ListaCompromisso.Location = new Point(20, 22);
             ListaCompromisso.Name = "ListaCompromisso";
+            ListaCompromisso.ReadOnly = true;
             ListaCompromisso.RowHeadersVisible = false;
-            ListaCompromisso.RowTemplate.Height = 40;
-            ListaCompromisso.Size = new Size(831, 496);
+            ListaCompromisso.Size = new Size(674, 462);
             ListaCompromisso.TabIndex = 13;
             ListaCompromisso.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             ListaCompromisso.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -171,78 +209,90 @@
             ListaCompromisso.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             ListaCompromisso.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             ListaCompromisso.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            ListaCompromisso.ThemeStyle.HeaderStyle.Height = 40;
-            ListaCompromisso.ThemeStyle.ReadOnly = false;
+            ListaCompromisso.ThemeStyle.HeaderStyle.Height = 17;
+            ListaCompromisso.ThemeStyle.ReadOnly = true;
             ListaCompromisso.ThemeStyle.RowsStyle.BackColor = Color.White;
             ListaCompromisso.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             ListaCompromisso.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
             ListaCompromisso.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            ListaCompromisso.ThemeStyle.RowsStyle.Height = 40;
+            ListaCompromisso.ThemeStyle.RowsStyle.Height = 25;
             ListaCompromisso.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             ListaCompromisso.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             ListaCompromisso.CellContentClick += ListaCompromisso_CellContentClick;
             // 
-            // groupBox1
+            // btnExcluir
             // 
-            groupBox1.BackColor = Color.WhiteSmoke;
-            groupBox1.Controls.Add(btnAdicionar);
-            groupBox1.Controls.Add(ListaCompromisso);
-            groupBox1.Location = new Point(12, 55);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(983, 532);
-            groupBox1.TabIndex = 14;
-            groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
+            btnExcluir.Location = new Point(793, 379);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(98, 23);
+            btnExcluir.TabIndex = 12;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
-            // btnAdicionar
+            // btnEditar
             // 
-            btnAdicionar.CheckedState.ImageSize = new Size(64, 64);
-            btnAdicionar.HoverState.Image = Properties.Resources.add;
-            btnAdicionar.HoverState.ImageSize = new Size(45, 45);
-            btnAdicionar.Image = Properties.Resources.add;
-            btnAdicionar.ImageOffset = new Point(0, 0);
-            btnAdicionar.ImageRotate = 0F;
-            btnAdicionar.ImageSize = new Size(50, 50);
-            btnAdicionar.Location = new Point(879, 75);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.PressedState.ImageSize = new Size(64, 64);
-            btnAdicionar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnAdicionar.Size = new Size(80, 74);
-            btnAdicionar.TabIndex = 4;
-            btnAdicionar.Click += btnAdicionar_Click;
+            btnEditar.Location = new Point(793, 325);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(98, 23);
+            btnEditar.TabIndex = 11;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
-            // chkFeito
+            // Adicionar
             // 
-            chkFeito.FillWeight = 44.5506363F;
-            chkFeito.HeaderText = "✓";
-            chkFeito.Name = "chkFeito";
+            Adicionar.Location = new Point(793, 270);
+            Adicionar.Name = "Adicionar";
+            Adicionar.Size = new Size(98, 23);
+            Adicionar.TabIndex = 10;
+            Adicionar.Text = "Adicionar";
+            Adicionar.UseVisualStyleBackColor = true;
+            Adicionar.Click += Adicionar_Click;
             // 
-            // colTarefa
+            // Prazo
             // 
-            colTarefa.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colTarefa.FillWeight = 127.307304F;
-            colTarefa.HeaderText = "Tarefa";
-            colTarefa.Name = "colTarefa";
+            Prazo.AutoSize = true;
+            Prazo.Font = new Font("Segoe UI", 10F);
+            Prazo.Location = new Point(722, 161);
+            Prazo.Name = "Prazo";
+            Prazo.Size = new Size(58, 19);
+            Prazo.TabIndex = 9;
+            Prazo.Text = "Horário:";
             // 
-            // colData
+            // label3
             // 
-            colData.FillWeight = 110.881973F;
-            colData.HeaderText = "Data";
-            colData.Name = "colData";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.Location = new Point(722, 93);
+            label3.Name = "label3";
+            label3.Size = new Size(41, 19);
+            label3.TabIndex = 7;
+            label3.Text = "Data:";
             // 
-            // colHorario
+            // label2
             // 
-            colHorario.FillWeight = 141.11792F;
-            colHorario.HeaderText = "Horário";
-            colHorario.Name = "colHorario";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(722, 30);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 19);
+            label2.TabIndex = 7;
+            label2.Text = "Descrição:";
             // 
-            // colRemover
+            // txtDescricao
             // 
-            colRemover.FillWeight = 76.1421356F;
-            colRemover.HeaderText = "";
-            colRemover.Name = "colRemover";
-            colRemover.Text = "🗑️";
-            colRemover.UseColumnTextForButtonValue = true;
+            txtDescricao.Location = new Point(722, 52);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.Size = new Size(241, 23);
+            txtDescricao.TabIndex = 6;
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(371, 255);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(241, 23);
+            txtID.TabIndex = 16;
             // 
             // Agenda
             // 
@@ -257,9 +307,11 @@
             Name = "Agenda";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agenda";
+            Load += Agenda_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)ListaCompromisso).EndInit();
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ListaCompromisso).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -271,13 +323,17 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2ImageButton Minimizar;
         private Guna.UI2.WinForms.Guna2ImageButton Fechar;
-        private Guna.UI2.WinForms.Guna2DataGridView ListaCompromisso;
         private GroupBox groupBox1;
-        private Guna.UI2.WinForms.Guna2ImageButton btnAdicionar;
-        private DataGridViewCheckBoxColumn chkFeito;
-        private DataGridViewTextBoxColumn colTarefa;
-        private DataGridViewTextBoxColumn colData;
-        private DataGridViewTextBoxColumn colHorario;
-        private DataGridViewButtonColumn colRemover;
+        private Button Adicionar;
+        private Label Prazo;
+        private Label label2;
+        private TextBox txtDescricao;
+        private Button btnExcluir;
+        private Button btnEditar;
+        private Label label3;
+        private Guna.UI2.WinForms.Guna2DataGridView ListaCompromisso;
+        private MaskedTextBox txtData;
+        private MaskedTextBox txtHorario;
+        private TextBox txtID;
     }
 }

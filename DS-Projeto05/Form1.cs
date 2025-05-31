@@ -48,7 +48,7 @@ namespace DS_Projeto05
                 if (usuarioLogado != null)
                 {
                     MessageBox.Show("Login realizado com sucesso!", "Sucesso - Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Agenda agenda = new Agenda();
+                    Agenda agenda = new Agenda(usuarioLogado.ID);
                     agenda.Show();
                     this.Hide();
                 }
